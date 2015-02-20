@@ -1,0 +1,43 @@
+<html>
+<head>
+	<title> name me </title>
+	<link rel='stylesheet' href='./style.css' type='text/css' />
+	<script type='text/JavaScript' src='./javascript.js'></script>
+	
+</head>
+<body onkeydown='game.HandleKeyDown(event)' onkeyup='game.HandleKeyUp(event)'>
+	<div id='backing'>
+		<canvas id='mainCanvas' width='800px' height='600px'> 
+			<script type='text/javascript'> 
+				var game = new Game(); 
+				setInterval(function(){game.Run();}, 0);
+			</script> 
+		</canvas>
+		
+		<div id='outputDisplay'>
+			<script type='text/javascript'>
+				setInterval(function(){game.GetOutput();}, 0);
+			</script>
+		</div>
+		<div id='scoreDisplay'>
+			<script type='text/javascript'>
+				setInterval(function(){document.getElementById("scoreDisplay").innerHTML = game.GetPlayer().GetScore();}, 0);
+			</script>
+		</div>
+	</div>
+	
+</body>
+</html>
+
+<!--
+TODO:
+- add different colored enemies that give more score and give powerups, such as:
+	- one hit prevention shield
+	- large purple enemies that are so large that they can only be killed by sacrificing a shield. They 	give a large number of points.
+- add death animation
+? give more than 1 point per kill. base the amount of points given on the following:
+	- size of the enemy killed
+	- type of the enemy killed
+	- your size when killing the enemy (the smaller you are, the more points you get.)
+- add highscores (saved to text file on server). This needs to be done with php and ajax.
+-->
