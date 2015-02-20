@@ -1,3 +1,8 @@
+/*
+Purpose: Experimenting with object oriented javascript using prototypes. 
+Creator: Jeremy Gertridge
+Version: 2015.02.20
+*/
 
 /* CLASS SHIELD */
 function Shield(ctx){
@@ -183,7 +188,8 @@ function Game(){
 	this.output = new Array(
 		"Use the X key to decrease your size.", 
 		"Use the Z key to increase your size.", 
-		"Use the directional keys to move."
+		"Use the directional keys to move.",
+		"Collide with smaller circles to increase score."
 	);
 	
 	this.player = new Player(this.context);
@@ -420,9 +426,7 @@ Game.prototype.GetScoreGain = function(enemy){
 
 /* END GAME */
 
-function test(){
-	document.body.style.backgroundColor = "Red";
-}
+
 
 
 
